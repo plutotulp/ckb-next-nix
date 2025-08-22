@@ -1,0 +1,14 @@
+* Nix derivations and flake for ckb-next
+This repository packages up [[https://github.com/ckb-next/ckb-next][ckb-next: RGB driver for Linux]] for Nix.
+Contents:
+
+- pkgs/ckb-next/default.nix :: Derivation for a stable version of
+  ckb-next. This includes the daemon, systemd service unit and
+  accompanying udev rule.
+- pkgs/quazip/default.nix :: Derivation for a dependency of ckb-next
+  which wasn't already present in nixpkgs.
+- overlay.nix :: An overlay of the two derivations, plus an
+  experimental version of ckb-next.
+- flake.nix :: A flake wrapping everything up, including NixOS modules
+  that provide both the overlay and the definition of the ckb-next
+  systemd service.
