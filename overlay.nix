@@ -19,7 +19,9 @@ in
     ckb-next.overrideAttrs (
       _finalAttrs: prevAttrs: {
         version = rev;
-        src = prevAttrs.src // { inherit rev hash; };
+        src = prevAttrs.src // {
+          inherit rev hash;
+        };
       }
     );
 }

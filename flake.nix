@@ -24,11 +24,7 @@
       in
       {
         formatter = pkgs.nixfmt-rfc-style;
-        packages = {
-          ckb-next = pkgs.ckb-next;
-          ckb-next-experimental = pkgs.ckb-next-experimental;
-          quazip = pkgs.quazip;
-        };
+        packages = { inherit (pkgs) ckb-next ckb-next-experimental quazip; };
       }
     );
 }
